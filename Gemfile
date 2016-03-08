@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'carrierwave'
-gem 'rmagick', '2.13.2', :require => 'RMagick'
+gem 'rmagick', '2.13.4', :require => 'RMagick'
 gem 'devise'
 gem 'cancancan'
 gem 'seed_dump'
@@ -42,6 +42,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
+  gem 'rake'
 end
 
 group :development do
