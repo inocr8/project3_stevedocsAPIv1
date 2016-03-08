@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+  - 2.0.0
+  - 2.1.4
+  - 2.2.0
+env:
+  - DB=postgresql
+before_script:
+  - psql -c 'create database stevedocsapiv1_test' -U postgres
+script: 
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
+notifications:
+  slack:
+    secure: A1tP3vZVdIwGmFDgfwBYjKnx/dJRf6kea4kSpJ0SuYVAaCKOxI12jlqieG8a7JDLUmfFqEBv7+UVTnWPyz+DWfuUN+MewpUr0HAsDaMGI+TMZRDVs3K1MMk2w9SuzIyXeU0tTfHKBxBNQBzywzgtzae4exni7q09HQDphwwYuCV7J67fJBlLZoH0p4sxbma+kM2rt1YRAp3L5RxYHpZcwT/ReSQODH0MtYN5NLAyo5zchxC469nTpGYbcSuDeb/qxua7cLvQllkOa4A9R0FXful7LTXiDvmmgYtr9CdZsoT7e+bggAhJ3uC9Timwp77L9as0gNCG1KwmU65+iFGYTzn9k1/TZUgKQ6ZGgpoQN0mBzMry+ZcbGX67KjxO3QoYo2TTHXDcGJ32MXyg/p5Doz7cjcGz7O2LPJ0VIFcg4oqViL/I2oKUc1lXtrqnsuCS0ad1rgRToGRwad2BbfW5izRzHaXSq/76O+uhJnLv2nTZI06ootJ+mA99DKS7yF/Bdb8/w/XJz5UAho1ZM0TAy0kPHDrzvmzaKYlYfCCDpce+Zf1IkZZ/60xkN8KQ8eLbkn9Jz1oXxrqknvIp4tI31wiC5lD6bbSetiZeEXB7JCCKoWJdprVOXWHRLuxd+bO7GF29wkP/fZBSEQhsoib2/cM77I22h/czvKItKtAwJEM=
