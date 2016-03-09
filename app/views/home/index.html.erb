@@ -1,6 +1,10 @@
-<h1>Welcome to SteveDocs!</h1>
-<h2>
-  The time is now: <%= Time.now %>
-</h2>
-<h3>When will Steve be here to help you?</h3>
-<h1>SOOOOOOOOON!</h1>
+<div class="home-page">
+  <h1>~ Welcome to SteveDocs ~</h1>
+  <img src="<%= asset_path( 'SteveBot.png' ) %>" />
+  <h2>
+    When will SteveBot be here to help you?
+  </h2>
+  <h1>
+    In <%= distance_of_time_in_words(Time.now, Time.now.end_of_day) %>!!
+  </h1>
+</div>
