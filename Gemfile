@@ -6,6 +6,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'seed_dump'
 gem 'redcarpet'
+gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
