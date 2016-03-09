@@ -11,3 +11,13 @@ test:
   adapter: postgresql
   database: travis_ci_test
   username: postgres
+
+production:
+  url:  <%= ENV["DATABASE_URL"] %>
+  adapter: postgresql
+  encoding: unicode
+  database: stevedocs_api_v1_production
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+  username: stevedocs_api_v1
+  password: <%= ENV['STEVEDOCS_BASIC_V2_DATABASE_PASSWORD'] %>
+
