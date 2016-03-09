@@ -8,5 +8,6 @@ development: &default
   host: stevedocsapiv1_db_1
 
 test:
-  <<: *default
-  database: stevedocsapiv1_test
+  adapter: postgresql
+  database: travis_ci_test
+  username: postgres
